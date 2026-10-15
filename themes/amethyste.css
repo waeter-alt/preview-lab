@@ -1,0 +1,20 @@
+[data-theme="amethyste"] {
+  --couleur-fond: #1E1C22;
+  --couleur-fond-2: #141317;
+  --couleur-surface: #3B2659;
+  --couleur-nuit: #0E0D11;
+  --couleur-lueur: #3A3245;
+  --couleur-texte: #ECE5D9;
+  --couleur-ombre: #000000;
+  --couleur-motif: #CDBFA6;
+  --opacite-motif: 0.07;
+  --metal-sombre: #9A8B74;
+  --metal-moyen: #BEAE92;
+  --metal-clair: #D8CAB0;
+  --metal-reflet: #F4ECDD;
+  --ecran-a: #1E1C22;
+  --ecran-b: #3A3245;
+  --texte-ecran: #ECE5D9;
+  --police-titre: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}

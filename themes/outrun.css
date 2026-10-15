@@ -1,0 +1,27 @@
+[data-theme="outrun"] {
+  --couleur-fond: #140A2A;
+  --couleur-fond-2: #2A0E3D;
+  --couleur-surface: #0C0619;
+  --couleur-nuit: #05020C;
+  --couleur-lueur: #5A1A5E;
+  --couleur-texte: #FFF1FA;
+  --couleur-ombre: #000000;
+  --couleur-motif: #FF7AD9;
+  --opacite-motif: 0.11;
+  --metal-sombre: #FF6A00;
+  --metal-moyen: #FF2E88;
+  --metal-clair: #C03BFF;
+  --metal-reflet: #4DF3FF;
+  --ecran-a: #140A2A;
+  --ecran-b: #2A0E3D;
+  --texte-ecran: #FFF1FA;
+  --police-titre: "Bahnschrift SemiCondensed", "Bahnschrift", "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}
+[data-theme="outrun"] .scene::after {
+  content: ""; position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  background:
+    linear-gradient(0deg, color-mix(in srgb, var(--metal-sombre) 34%, transparent) 0, color-mix(in srgb, var(--metal-moyen) 16%, transparent) 9%, transparent 22%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, .18) 0 1px, transparent 1px 3px);
+  box-shadow: inset 0 0 160px color-mix(in srgb, var(--metal-clair) 28%, transparent);
+}

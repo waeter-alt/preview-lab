@@ -1,0 +1,20 @@
+[data-theme="neon"] {
+  --couleur-fond: #0D0718;
+  --couleur-fond-2: #05020C;
+  --couleur-surface: #06030D;
+  --couleur-nuit: #030108;
+  --couleur-lueur: #2B0A45;
+  --couleur-texte: #F3EAFF;
+  --couleur-ombre: #000000;
+  --couleur-motif: #FF2BB0;
+  --opacite-motif: 0.08;
+  --metal-sombre: #6E2BD9;
+  --metal-moyen: #E0249A;
+  --metal-clair: #FF5FC8;
+  --metal-reflet: #6DF6FF;
+  --ecran-a: #0D0718;
+  --ecran-b: #2B0A45;
+  --texte-ecran: #F3EAFF;
+  --police-titre: "Bahnschrift SemiCondensed", "Bahnschrift", "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}

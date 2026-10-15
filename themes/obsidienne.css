@@ -1,0 +1,20 @@
+[data-theme="obsidienne"] {
+  --couleur-fond: #15151A;
+  --couleur-fond-2: #0B0B0E;
+  --couleur-surface: #0B0B0E;
+  --couleur-nuit: #0B0B0E;
+  --couleur-lueur: #2A2519;
+  --couleur-texte: #D9D4CB;
+  --couleur-ombre: #000000;
+  --couleur-motif: #C9A646;
+  --opacite-motif: 0.07;
+  --metal-sombre: #BC9C43;
+  --metal-moyen: #C9A646;
+  --metal-clair: #D3B86F;
+  --metal-reflet: #F0D27A;
+  --ecran-a: #15151A;
+  --ecran-b: #0B0B0E;
+  --texte-ecran: #D9D4CB;
+  --police-titre: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}

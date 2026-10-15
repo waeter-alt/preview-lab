@@ -1,0 +1,29 @@
+[data-theme="supernova"] {
+  --couleur-fond: #06040F;
+  --couleur-fond-2: #120626;
+  --couleur-surface: #04030A;
+  --couleur-nuit: #010005;
+  --couleur-lueur: #3A1466;
+  --couleur-texte: #FFFFFF;
+  --couleur-ombre: #000000;
+  --couleur-motif: #B8F7FF;
+  --opacite-motif: 0.14;
+  --metal-sombre: #FF2BD6;
+  --metal-moyen: #8A5CFF;
+  --metal-clair: #38E8FF;
+  --metal-reflet: #FFFFFF;
+  --ecran-a: #06040F;
+  --ecran-b: #3A1466;
+  --texte-ecran: #FFFFFF;
+  --police-titre: "Bahnschrift SemiCondensed", "Bahnschrift", "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}
+[data-theme="supernova"] .scene::after {
+  content: ""; position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .16) 0 1px, transparent 1px 3px);
+  box-shadow: inset 0 0 180px color-mix(in srgb, var(--metal-sombre) 34%, transparent), inset 0 0 70px color-mix(in srgb, var(--metal-clair) 30%, transparent);
+  animation: supernova-respire 5s ease-in-out infinite alternate;
+}
+@keyframes supernova-respire { from { opacity: .55; } to { opacity: 1; } }
+[data-theme="supernova"][data-animations-reduites] .scene::after { animation: none; }
+@media (prefers-reduced-motion: reduce) { [data-theme="supernova"] .scene::after { animation: none; } }

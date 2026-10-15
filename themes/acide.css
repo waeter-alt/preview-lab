@@ -1,0 +1,20 @@
+[data-theme="acide"] {
+  --couleur-fond: #08120A;
+  --couleur-fond-2: #030804;
+  --couleur-surface: #040A05;
+  --couleur-nuit: #020402;
+  --couleur-lueur: #0F3A14;
+  --couleur-texte: #EEFFE6;
+  --couleur-ombre: #000000;
+  --couleur-motif: #39FF14;
+  --opacite-motif: 0.10;
+  --metal-sombre: #0E9F4C;
+  --metal-moyen: #39FF14;
+  --metal-clair: #B6FF3B;
+  --metal-reflet: #F6FF7A;
+  --ecran-a: #08120A;
+  --ecran-b: #0F3A14;
+  --texte-ecran: #EEFFE6;
+  --police-titre: "Bahnschrift SemiCondensed", "Bahnschrift", "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}

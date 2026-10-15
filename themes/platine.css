@@ -1,0 +1,20 @@
+[data-theme="platine"] {
+  --couleur-fond: #101418;
+  --couleur-fond-2: #080A0D;
+  --couleur-surface: #080A0C;
+  --couleur-nuit: #040506;
+  --couleur-lueur: #15262E;
+  --couleur-texte: #E6ECF0;
+  --couleur-ombre: #000000;
+  --couleur-motif: #9FB6C4;
+  --opacite-motif: 0.06;
+  --metal-sombre: #6F7C86;
+  --metal-moyen: #A3B0BA;
+  --metal-clair: #CFD9E0;
+  --metal-reflet: #F5FBFF;
+  --ecran-a: #101418;
+  --ecran-b: #15262E;
+  --texte-ecran: #E6ECF0;
+  --police-titre: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --police-logo: "Michroma", "Arial Black", sans-serif;
+}

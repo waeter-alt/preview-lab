@@ -1,0 +1,19 @@
+[data-theme="mansur"] {
+  --univers: tajine;
+  --couleur-fond: #3B1F5C;
+  --couleur-fond-2: #6B1E2E;
+  --couleur-surface: #2E1A47;
+  --couleur-nuit: #120A1C;
+  --couleur-lueur: #4A2873;
+  --couleur-texte: #F5F1E8;
+  --couleur-ombre: #140409;
+  --couleur-motif: #F5F1E8;
+  --opacite-motif: 0.06;
+  --metal-sombre: #9C7A14;
+  --metal-moyen: #C9A227;
+  --metal-clair: #D4AF37;
+  --metal-reflet: #F9F0D5;
+  --ecran-a: #3B1F5C;
+  --ecran-b: #6B1E2E;
+  --texte-ecran: #F5F1E8;
+}
