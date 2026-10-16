@@ -153,6 +153,20 @@ const EffetMaillotCartes = {
     { categorie: 'Hologramme', id: 'nomFondY', libelle: 'Hologramme · grand nom : décalage vertical (% ; négatif = plus haut)', type: 'nombre', min: -40, max: 40, pas: 1, defaut: 0 },
     { categorie: 'Hologramme', id: 'holoLignes', libelle: 'Hologramme · lignes de balayage (0 = aucune)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.55 },
     { categorie: 'Hologramme', id: 'holoFaisceau', libelle: 'Hologramme · intensité des faisceaux (0 = éteints)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.4 },
+    { categorie: 'Hologramme · brouillage', id: 'brouillage', libelle: 'Hologramme · brouillage : l\'agent se brouille sous la souris', type: 'interrupteur', defaut: true },
+    { categorie: 'Hologramme · brouillage', id: 'brRayon', libelle: 'Hologramme · brouillage : largeur de la zone autour de la souris (px)', type: 'nombre', min: 30, max: 500, pas: 5, defaut: 170 },
+    { categorie: 'Hologramme · brouillage', id: 'brHauteur', libelle: 'Hologramme · brouillage : hauteur de la zone autour de la souris (px)', type: 'nombre', min: 20, max: 400, pas: 5, defaut: 120 },
+    { categorie: 'Hologramme · brouillage', id: 'brTranches', libelle: 'Hologramme · brouillage : nombre de tranches qui se décalent', type: 'nombre', min: 1, max: 8, pas: 1, defaut: 5 },
+    { categorie: 'Hologramme · brouillage', id: 'brEpaisseur', libelle: 'Hologramme · brouillage : épaisseur des tranches (px)', type: 'nombre', min: 2, max: 40, pas: 1, defaut: 20 },
+    { categorie: 'Hologramme · brouillage', id: 'brDecalage', libelle: 'Hologramme · brouillage : décalage des tranches (px)', type: 'nombre', min: 0, max: 80, pas: 1, defaut: 22 },
+    { categorie: 'Hologramme · brouillage', id: 'brCadence', libelle: 'Hologramme · brouillage : changements par seconde', type: 'nombre', min: 4, max: 60, pas: 1, defaut: 60 },
+    { categorie: 'Hologramme · brouillage', id: 'brPersistance', libelle: 'Hologramme · brouillage : durée avant de se stabiliser quand la souris s\'arrête (s)', type: 'nombre', min: 0.1, max: 2, pas: 0.05, defaut: 0.45 },
+    { categorie: 'Hologramme · brouillage', id: 'brReactivite', libelle: 'Hologramme · brouillage : charge selon la vitesse de la souris', type: 'nombre', min: 0.2, max: 3, pas: 0.05, defaut: 1 },
+    { categorie: 'Hologramme · brouillage', id: 'brGlisse', libelle: 'Hologramme · brouillage : glissement des tranches (ms, 0 = saut sec)', type: 'nombre', min: 0, max: 300, pas: 5, defaut: 260 },
+    { categorie: 'Hologramme · brouillage', id: 'brElasticite', libelle: 'Hologramme · brouillage : élasticité (0 = aucune)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 1 },
+    { categorie: 'Hologramme · brouillage', id: 'brDerive', libelle: 'Hologramme · brouillage : reflets de couleur des tranches (degrés, 0 = aucun)', type: 'nombre', min: 0, max: 120, pas: 1, defaut: 120 },
+    { categorie: 'Hologramme · brouillage', id: 'brResync', libelle: 'Hologramme · brouillage : resynchronisation (balayage lumineux) quand la souris s\'arrête', type: 'interrupteur', defaut: false },
+    { categorie: 'Hologramme · brouillage', id: 'brDecharge', libelle: 'Hologramme · brouillage : décharge sur toute la hauteur au clic', type: 'interrupteur', defaut: true },
     { categorie: 'Layout carte holo', id: 'lcPolices', libelle: 'Layout carte holo · polices (titre / textes / étiquettes)', type: 'choix', defaut: 'theme',
       options: [{ valeur: 'theme', libelle: 'Thème : police du thème / système / console' }, { valeur: 'tactique', libelle: 'Tactique : Big Shoulders / Instrument Sans / Consolas' },
         { valeur: 'din', libelle: 'DIN (esprit Valorant) : Bahnschrift condensée / Bahnschrift' }, { valeur: 'scifi', libelle: 'Sci-fi : Michroma / Instrument Sans' },
@@ -456,6 +470,20 @@ const EffetMaillotCartes = {
 .mcj-nom-fond { position: absolute; left: 50%; top: 48%; height: calc(88% * var(--nom-fond-taille, 1)); aspect-ratio: 700 / 1024; transform: translate(-50%, calc(-50% + var(--nom-fond-y, 0%))); background: var(--holo-couleur); opacity: var(--nom-fond, .3);
   -webkit-mask: var(--fond) center / contain no-repeat; mask: var(--fond) center / contain no-repeat; }
 .mc-scene[data-univers="tajine"] .mcj-nom-fond { display: none; }
+.mcj-tranche { position: absolute; inset: 0; display: none; -webkit-mask: var(--agent-masque) center / contain no-repeat; mask: var(--agent-masque) center / contain no-repeat;
+  transition: clip-path var(--br-glisse) cubic-bezier(.3, var(--br-rebond), .45, 1); }
+.mcj-tranche > div { position: absolute; inset: 0; isolation: isolate; will-change: transform; transition: transform var(--br-glisse) cubic-bezier(.3, var(--br-rebond), .45, 1); }
+.mcj-tranche img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: grayscale(1) contrast(1.4) brightness(1.5); }
+.mcj-tranche:nth-child(odd) { filter: hue-rotate(var(--br-derive)) saturate(1.6); }
+.mcj-tranche:nth-child(even) { filter: hue-rotate(calc(var(--br-derive) * -1)) saturate(1.6); }
+.mcj-holo--agent[data-brouille] .mcj-tranche { display: block; }
+.mcj-scan { position: absolute; inset: 0; pointer-events: none; opacity: 0; background-repeat: no-repeat; background-size: 100% 300%;
+  background-image: linear-gradient(180deg, transparent 0%, transparent 42%, color-mix(in srgb, var(--holo-couleur) 25%, transparent) 48%, var(--holo-couleur) 50%, transparent 51%, transparent 100%);
+  -webkit-mask: var(--agent-masque) center / contain no-repeat; mask: var(--agent-masque) center / contain no-repeat; }
+.mcj-scan.joue { animation: mcj-scan .55s cubic-bezier(.4, 0, .2, 1); }
+@keyframes mcj-scan { 0% { opacity: 1; background-position: 0 100%; } 85% { opacity: 1; } 100% { opacity: 0; background-position: 0 0; } }
+.mcj-holo--agent .mcj-holo-image.flash { animation: mcj-flash .45s ease-out; }
+@keyframes mcj-flash { 0% { filter: grayscale(1) contrast(1.25) brightness(2); } 100% { filter: grayscale(1) contrast(1.25) brightness(1.15); } }
 .mcj-holo--fiche .mcj-holo-image { filter: none; border-radius: 0; overflow: visible; container-type: inline-size; }
 .mcj-holo--fiche .mcj-holo-teinte { display: none; }
 .mcj-holo--fiche .mcj-holo-faisceau { left: 26%; right: 26%; top: calc(var(--holo-haut) + var(--holo-h)); }
@@ -674,7 +702,7 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
           '<div class="mcj-holo-projection"><div class="mcj-holo-tremble"><div class="mcj-holo-image"></div><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span></div></div>' +
           '<div class="mcj-holo-source"></div></div>' +
         '<div class="mcj-holo mcj-holo--agent" aria-hidden="true"><div class="mcj-holo-faisceau"></div><span class="mcj-holo-nom"></span>' +
-          '<div class="mcj-holo-projection"><span class="mcj-nom-fond"></span><div class="mcj-holo-tremble"><div class="mcj-holo-image"><img class="mcj-holo-agent-img" alt="" decoding="async"></div><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span></div></div>' +
+          '<div class="mcj-holo-projection"><span class="mcj-nom-fond"></span><div class="mcj-holo-tremble"><div class="mcj-holo-image"><img class="mcj-holo-agent-img" alt="" decoding="async"></div><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span><div class="mcj-tranches"></div><span class="mcj-scan"></span></div></div>' +
           '<div class="mcj-holo-source"></div></div>' +
       '</div>';
     scene.innerHTML =
@@ -963,6 +991,9 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
       if (holoCarte >= 0 && univers !== 'tajine') afficherBanniere(holoCarte);
     }
     function appliquerReglagesCartes() {
+      scene.style.setProperty('--br-glisse', r.brGlisse + 'ms');
+      scene.style.setProperty('--br-rebond', (1 + 1.6 * r.brElasticite).toFixed(2));
+      scene.style.setProperty('--br-derive', r.brDerive + 'deg');
       dessinerCurseur();
       scene.style.setProperty('--cj-duree', r.dureeRetournement + 's');
       scene.style.setProperty('--cj-courbe', 'cubic-bezier(.35, ' + (1 + 0.7 * r.rebond).toFixed(2) + ', .45, 1)');
@@ -1172,6 +1203,7 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
         holoAgent.style.setProperty('--agent-masque', 'url("' + joueurs[i].agentImage + '")');
         holoAgent.querySelector('.mcj-holo-nom').textContent = joueurs[i].agent;
         holoAgent.classList.add('visible');
+        preparerTranchesAgent();
       }
     }
     function cacherHologramme() {
@@ -1179,7 +1211,98 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
       holo.classList.remove('visible');
       if (holoAgent) holoAgent.classList.remove('visible');
       delete scene.dataset.holo;
+      arreterBrouillage();
     }
+    const projectionAgent = holoAgent.querySelector('.mcj-holo-projection');
+    const zoneTranches = holoAgent.querySelector('.mcj-tranches');
+    const scanAgent = holoAgent.querySelector('.mcj-scan');
+    const imageAgentCadre = holoAgent.querySelector('.mcj-holo-image');
+    const silhouettes = {};
+    let tranchesAgent = [], brX = 0, brY = 0, brCibleX = 0, brCibleY = 0, brCharge = 0, brChargeMax = 0;
+    let brDernierMouvement = 0, brDernierTirage = 0, brFinDecharge = 0, brFinRetour = 0, brPrecedent = 0, brIdImage = 0;
+    const brHasard = (min, max) => min + Math.random() * (max - min);
+    function lireSilhouette(src) {
+      if (src in silhouettes) return;
+      silhouettes[src] = null;
+      const lecture = new Image();
+      lecture.onload = () => {
+        try {
+          const toile = document.createElement('canvas');
+          toile.width = toile.height = 100;
+          const ctx = toile.getContext('2d', { willReadFrequently: true });
+          ctx.drawImage(lecture, 0, 0, 100, 100);
+          silhouettes[src] = ctx.getImageData(0, 0, 100, 100).data;
+        } catch (erreur) { silhouettes[src] = null; }
+      };
+      lecture.src = src;
+    }
+    function surSilhouette(u, v) {
+      if (u < 0 || v < 0 || u >= 1 || v >= 1) return false;
+      const alpha = silhouettes[imageAgent.getAttribute('src')];
+      return !alpha || alpha[(Math.floor(v * 100) * 100 + Math.floor(u * 100)) * 4 + 3] > 40;
+    }
+    function preparerTranchesAgent() {
+      const src = imageAgent.getAttribute('src') || '';
+      if (tranchesAgent.length !== r.brTranches) {
+        zoneTranches.innerHTML = Array.from({ length: r.brTranches }, () => '<div class="mcj-tranche"><div><img alt="" decoding="async"><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span></div></div>').join('');
+        tranchesAgent = [...zoneTranches.children];
+      }
+      for (const tranche of tranchesAgent) { const img = tranche.querySelector('img'); if (img.getAttribute('src') !== src && src) img.src = src; }
+      if (src) lireSilhouette(src);
+    }
+    const brRejouer = (element, classe) => { element.classList.remove(classe); void element.offsetWidth; element.classList.add(classe); };
+    function arreterBrouillage() {
+      cancelAnimationFrame(brIdImage); brIdImage = 0;
+      holoAgent.removeAttribute('data-brouille');
+      brCharge = 0; brChargeMax = 0; brFinRetour = 0;
+    }
+    function brouiller(maintenant) {
+      const pas = brPrecedent ? Math.min(3, (maintenant - brPrecedent) / 16.7) : 1;
+      brPrecedent = maintenant;
+      const l = projectionAgent.offsetWidth, h = projectionAgent.offsetHeight;
+      brX += (brCibleX - brX) * (1 - Math.pow(0.6, pas)); brY += (brCibleY - brY) * (1 - Math.pow(0.6, pas));
+      const decharge = maintenant < brFinDecharge;
+      if (!decharge && maintenant - brDernierMouvement > 80) brCharge *= Math.pow(1 - 0.12 / r.brPersistance * 0.45, pas);
+      if (brCharge < 0.03 && !decharge) {
+        if (!brFinRetour) { brFinRetour = maintenant + r.brGlisse * 1.6; for (const t of tranchesAgent) t.firstChild.style.transform = 'translate3d(0, 0, 0)'; }
+        if (maintenant < brFinRetour) { brIdImage = requestAnimationFrame(brouiller); return; }
+        if (r.brResync && brChargeMax > 0.25) { brRejouer(scanAgent, 'joue'); brRejouer(imageAgentCadre, 'flash'); }
+        arreterBrouillage();
+        return;
+      }
+      brFinRetour = 0;
+      holoAgent.setAttribute('data-brouille', '');
+      if (maintenant - brDernierTirage >= 1000 / r.brCadence) {
+        brDernierTirage = maintenant;
+        const actives = decharge ? tranchesAgent.length : Math.max(1, Math.ceil(tranchesAgent.length * brCharge));
+        const hauteur = decharge ? h : r.brHauteur * (0.6 + 0.4 * brCharge), largeur = decharge ? l * 2 : r.brRayon * (0.7 + 0.5 * brCharge);
+        const centre = decharge ? h / 2 : brY;
+        tranchesAgent.forEach((tranche, i) => {
+          if (i >= actives) { tranche.style.clipPath = 'inset(50% 50% 50% 50%)'; return; }
+          const haut = Math.max(0, centre + brHasard(-hauteur / 2, hauteur / 2)), epaisseur = r.brEpaisseur * brHasard(0.6, 1.6) * (decharge ? 1.6 : 1);
+          const gauche = Math.max(0, brX - largeur / 2), droite = Math.max(0, l - (brX + largeur / 2));
+          tranche.style.clipPath = 'inset(' + haut.toFixed(1) + 'px ' + droite.toFixed(1) + 'px ' + Math.max(0, h - haut - epaisseur).toFixed(1) + 'px ' + gauche.toFixed(1) + 'px)';
+          tranche.firstChild.style.transform = 'translate3d(' + (brHasard(-1, 1) * r.brDecalage * (0.4 + 0.9 * brCharge)).toFixed(1) + 'px, 0, 0)';
+        });
+      }
+      brIdImage = requestAnimationFrame(brouiller);
+    }
+    function suivreAgent(evenement) {
+      if (calme || !r.brouillage || univers === 'tajine' || !holoAgent.classList.contains('visible')) return;
+      const b = projectionAgent.getBoundingClientRect(), l = projectionAgent.offsetWidth, h = projectionAgent.offsetHeight;
+      const nx = (evenement.clientX - b.left) * l / b.width, ny = (evenement.clientY - b.top) * h / b.height;
+      if (!surSilhouette(nx / l, ny / h)) return;
+      const chemin = brIdImage ? Math.hypot(nx - brCibleX, ny - brCibleY) : 0;
+      if (!brIdImage) { brX = nx; brY = ny; brPrecedent = 0; preparerTranchesAgent(); }
+      brCibleX = nx; brCibleY = ny;
+      brCharge = Math.min(1, brCharge + chemin / 240 * r.brReactivite + 0.04);
+      brChargeMax = Math.max(brChargeMax, brCharge);
+      if (evenement.type === 'pointerdown' && r.brDecharge) { brFinDecharge = performance.now() + 280; brCharge = 1; brChargeMax = 1; }
+      brDernierMouvement = performance.now();
+      if (!brIdImage) brIdImage = requestAnimationFrame(brouiller);
+    }
+    scene.addEventListener('pointermove', suivreAgent);
+    scene.addEventListener('pointerdown', suivreAgent);
     function retourner(i, oui) {
       const carte = cartes[i], flotte = flottes[i];
       if (carte.classList.contains('retournee') === oui) return;
@@ -1497,6 +1620,7 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
         majInvite();
       },
       detruire() {
+        arreterBrouillage();
         clearTimeout(minuterieRetournement);
         clearTimeout(minuterieApercu);
         clearTimeout(minuterieEntree);

@@ -8,7 +8,7 @@ const RANGEMENT_EFFETS = {
   archives: ['dissolve', 'rouleau', 'pixel-scan', 'hero-v', 'maillot', 'cartes-joueurs'],
   sousCategories: [
     { titre: 'Équipe et joueurs', effets: ['maillot-cartes', 'selection-joueurs', 'table-tactique', 'entree-arene'] },
-    { titre: 'Hologrammes', effets: ['hologramme-joueur', 'holo-fiche-agent', 'holo-table', 'holo-materialisation', 'holo-transmission', 'holo-escouade'] },
+    { titre: 'Hologrammes', effets: ['hologramme-joueur', 'holo-fiche-agent', 'holo-table', 'holo-materialisation', 'holo-transmission', 'holo-escouade', 'holo-omen'] },
     { titre: 'Cartes joueurs', effets: ['carte-portrait', 'carte-panneau', 'carte-inventaire', 'carte-affiche', 'carte-banniere'] },
     { titre: 'Menus de navigation', effets: ['nav-bandeau', 'nav-rail', 'nav-jeu', 'nav-bandeau-ecusson', 'nav-bandeau-capsule', 'nav-bandeau-diffusion'] },
     { titre: 'Identité du lab', effets: ['voile-accueil'] }
