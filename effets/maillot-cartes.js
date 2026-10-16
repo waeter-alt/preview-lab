@@ -4,12 +4,46 @@ const EffetMaillotCartes = {
   description: 'Le site enfile le maillot, puis l\'équipe entière entre sur le dos du maillot, en formation en V. Survolez un joueur, cliquez pour le sélectionner : il se retourne, ses hologrammes s\'allument, et ses coéquipiers passent sur le banc (toujours cliquables). Faites défiler la maquette, ou utilisez Lecture.',
   variables: ['--metal-sombre', '--metal-moyen', '--metal-clair', '--metal-reflet', '--couleur-fond', '--couleur-surface', '--couleur-lueur', '--couleur-texte', '--couleur-motif', '--opacite-motif', '--couleur-nuit', '--police-titre', '--police-logo'],
   joueurs: [
-    { numero: '01', pseudo: 'Noctis', role: 'Duelliste', agent: 'Jett', agentImage: 'images/agents/jett-full.webp', photo: 'images/joueurs/joueur-01.jpg', acs: 271, kd: '1.34', hs: 32 },
-    { numero: '02', pseudo: 'Kaze', role: 'Initiateur', agent: 'Sova', agentImage: 'images/agents/sova-full.webp', photo: 'images/joueurs/joueur-02.jpg', acs: 214, kd: '1.12', hs: 26 },
-    { numero: '03', pseudo: 'Lyra', role: 'Contrôleuse', agent: 'Omen', agentImage: 'images/agents/omen-full.webp', photo: 'images/joueurs/joueur-03.jpg', acs: 198, kd: '1.05', hs: 24 },
-    { numero: '04', pseudo: 'Sahir', role: 'Sentinelle', agent: 'Killjoy', agentImage: 'images/agents/killjoy-full.webp', photo: 'images/joueurs/joueur-04.jpg', acs: 205, kd: '1.18', hs: 28 },
-    { numero: '05', pseudo: 'Vortex', role: 'Flex · IGL', agent: 'Skye', agentImage: 'images/agents/skye-full.webp', photo: 'images/joueurs/joueur-05.jpg', acs: 189, kd: '0.97', hs: 22 }
+    { numero: '01', pseudo: 'Sevroze', role: 'Second duelliste', agent: 'Yoru', agentImage: 'images/agents/yoru-full.webp', photo: 'images/joueurs/joueur-01.jpg', acs: 271, kd: '1.34', hs: 32,
+      identite: 'Sami · 25 ans · Côte d\'Azur', icone: 'duelliste', dossier: 'yoru',
+      region: 'Côte d\'Azur', sensi: 0.32, dpi: 800, reseaux: ['twitch', 'x', 'tiktok'],
+      bio: ['Joue à Valorant depuis mars 2023.', 'De duelliste entry à smoker, puis second duelliste.', 'Vainqueur Élite 2 et Élite 5 (circuit Premier).'],
+      setup: [['Clavier', 'Razer Huntsman Mini'], ['Souris', 'Logitech G Pro X Superlight 2 DEX'], ['Tapis', 'Artisan FX Zero Soft XL'], ['Écouteurs', 'Moondrop Chu II']] },
+    { numero: '02', pseudo: 'Shiaga', role: 'Initiateur · IGL', agent: 'Sova', agentImage: 'images/agents/sova-full.webp', photo: 'images/joueurs/joueur-02.jpg', acs: 214, kd: '1.12', hs: 26,
+      identite: 'IGL · initiateur de l\'équipe', icone: 'initiateur', dossier: 'sova',
+      region: 'Bordeaux', sensi: 0.4, dpi: 800, reseaux: ['twitch', 'x'],
+      bio: ['Joue depuis 4 ans, « toujours la niaque ».', 'Pointilleux et exigeant dans son lead.', 'Sait aussi prendre les choses à la rigolade.'],
+      setup: [['Clavier', 'Wooting 60HE+'], ['Casque', 'Razer BlackShark V3'], ['Souris', 'Logitech Superlight 2 (8 kHz)']] },
+    { numero: '03', pseudo: 'Medhielm', role: 'Contrôleur · smoker', agent: 'Omen', agentImage: 'images/agents/omen-full.webp', photo: 'images/joueurs/joueur-03.jpg', acs: 198, kd: '1.05', hs: 24,
+      identite: 'Tristan · 27 ans', icone: 'controleur', dossier: 'omen',
+      region: 'Marseille', sensi: 0.21, dpi: 1600, reseaux: ['twitch', 'tiktok', 'x'], direct: true,
+      liens: { twitch: 'https://www.twitch.tv/m3hdielm' }, titreDirect: 'Ranked Immortel · Omen', spectateurs: '1,2 k', imageDirect: 'ressources-maquette/V-valorant/illustrations/closed-beta-promo.webp',
+      bio: ['Joueur compétitif, le smoker de l\'équipe.', 'Passionné de danse depuis l\'enfance.'],
+      setup: [['Clavier', 'Wooting 80HE+'], ['Souris', 'Logitech Pro X Superlight 2 SE'], ['Écouteurs', 'Linsoul Kiwi Ears']] },
+    { numero: '04', pseudo: 'Blackkzon', role: 'Duelliste entry', agent: 'Jett', agentImage: 'images/agents/jett-full.webp', photo: 'images/joueurs/joueur-04.jpg', acs: 205, kd: '1.18', hs: 28,
+      identite: 'Jason · 23 ans', icone: 'duelliste', dossier: 'jett',
+      region: 'Lille', sensi: 0.45, dpi: 800, reseaux: ['x', 'tiktok'],
+      bio: ['Joue à Valorant depuis 6 ans, à fond depuis 4 ans.', 'Hors du jeu : cuisine, lecture, temps entre amis.'],
+      setup: [['Souris', 'Razer DeathAdder V3 Pro'], ['Clavier', 'Keychron K2 Ultra'], ['Casque', 'HyperX Cloud III']] },
+    { numero: '05', pseudo: 'Tsolma', role: 'Sentinelle', agent: 'Killjoy', agentImage: 'images/agents/killjoy-full.webp', photo: 'images/joueurs/joueur-05.jpg', acs: 189, kd: '0.97', hs: 22,
+      identite: 'Tom · 22 ans · Lyon', icone: 'sentinelle', dossier: 'killjoy',
+      region: 'Lyon', sensi: 0.35, dpi: 800, reseaux: ['twitch', 'x'],
+      bio: ['Joue à Valorant depuis l\'été 2022.', 'Arrivé dans l\'équipe à la mi-2026, en sentinelle.', 'Spécialiste des retakes, ne lâche jamais un site.'],
+      setup: [['Clavier', 'Wooting 60HE'], ['Souris', 'Logitech G Pro X Superlight 2'], ['Tapis', 'Artisan Hien Soft XL'], ['Casque', 'HyperX Cloud II']] }
   ],
+  iconesFace: {
+    twitch: '<path d="M4 3h16v11l-5 5h-4l-3 3H6v-3H4z"/><path d="M10 7.5v4.5M15 7.5v4.5"/>',
+    x: '<path d="M4.5 4l15 16M19.5 4l-15 16"/>',
+    tiktok: '<path d="M14 3v11.5a4.5 4.5 0 1 1-4.5-4.5"/><path d="M14 3c.8 2.8 2.8 4.4 5.5 4.6"/>',
+    lieu: '<path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>'
+  },
+  icones: {
+    Clavier: '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h1M9.5 10h1M13 10h1M16.5 10h1M6 14h1M17 14h1M9 14h6"/>',
+    Souris: '<rect x="6.5" y="2.5" width="11" height="19" rx="5.5"/><path d="M12 2.5v6.5M6.5 9h11"/><path d="M12 5v2" stroke-width="2.4"/>',
+    Casque: '<path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="2.5" y="13.5" width="5" height="7" rx="1.6"/><rect x="16.5" y="13.5" width="5" height="7" rx="1.6"/>',
+    'Écouteurs': '<circle cx="7.5" cy="9" r="3.5"/><path d="M9 12.2l1 7.3h-3l-.6-6"/><circle cx="16.5" cy="9" r="3.5"/><path d="M15 12.2l-1 7.3h3l.6-6"/>',
+    Tapis: '<path d="M3 17l3-10h15l-3 10z"/><rect x="11.5" y="9" width="4" height="6" rx="2"/>'
+  },
   joueursTajine: [
     { numero: '01', pseudo: 'Kemal', role: 'Maître du tajine', agent: 'Tajine', agentImage: 'images/tajine/item-tajine.png', photo: 'images/tajine/joueur-01.jpg', acs: 312, kd: '4.9', hs: 35 },
     { numero: '02', pseudo: 'Rachid', role: 'Roi des brochettes', agent: 'Brochettes kefta', agentImage: 'images/tajine/item-kefta.png', photo: 'images/tajine/joueur-02.jpg', acs: 268, kd: '4.7', hs: 70 },
@@ -96,12 +130,69 @@ const EffetMaillotCartes = {
     { categorie: 'Cartes · aperçu', id: 'apercuRotation', libelle: 'Cartes · survol : rotation vers la droite (degrés)', type: 'nombre', min: 0, max: 10, pas: 0.5, defaut: 3 },
     { categorie: 'Cartes · aperçu', id: 'apercuSoulevement', libelle: 'Cartes · survol : soulèvement (px)', type: 'nombre', min: 0, max: 30, pas: 1, defaut: 30 },
     { categorie: 'Cartes · aperçu', id: 'apercuIndice', libelle: 'Cartes · survol : pastille « Voir le joueur »', type: 'interrupteur', defaut: true },
-    { categorie: 'Hologramme', id: 'hologramme', libelle: 'Hologramme · projeter la carte à gauche au retournement', type: 'interrupteur', defaut: true },
+    { categorie: 'Cartes · face', id: 'carteReglages', libelle: 'Cartes · face : réglages de pro (sensibilité, DPI, eDPI) à la place des statistiques', type: 'interrupteur', defaut: true },
+    { categorie: 'Cartes · face', id: 'carteReseaux', libelle: 'Cartes · face : bande région et réseaux sociaux', type: 'interrupteur', defaut: true },
+    { categorie: 'Cartes · face', id: 'carteDirect', libelle: 'Cartes · face : pastille « EN LIVE » du joueur qui streame (démo : Medhielm)', type: 'interrupteur', defaut: true },
+    { categorie: 'Cartes · face', id: 'couleurDirect', libelle: 'Cartes · face : couleur du direct', type: 'couleur', defaut: '#E5484D' },
+    { categorie: 'Cartes · face', id: 'photoGain', libelle: 'Cartes · face : la photo descend sur le panneau du bas (part du panneau ; 0 = comme avant)', type: 'nombre', min: 0, max: 0.6, pas: 0.01, defaut: 0.3 },
+    { categorie: 'Hologramme', id: 'hologramme', libelle: 'Hologramme · projeter la fiche du joueur (bannière) à gauche au retournement', type: 'interrupteur', defaut: true },
     { categorie: 'Hologramme', id: 'holoAgent', libelle: 'Hologramme · projeter aussi l\'agent favori à droite', type: 'interrupteur', defaut: true },
     { categorie: 'Hologramme', id: 'holoCouleur', libelle: 'Hologramme · couleur', type: 'couleur', defaut: '#8FB0CC' },
-    { categorie: 'Hologramme', id: 'holoTaille', libelle: 'Hologramme · taille (par rapport à la carte)', type: 'nombre', min: 1, max: 2, pas: 0.05, defaut: 1.4 },
+    { categorie: 'Hologramme', id: 'holoTaille', libelle: 'Hologramme · largeur de la bannière (par rapport à la carte)', type: 'nombre', min: 1, max: 2, pas: 0.05, defaut: 1.4 },
     { categorie: 'Hologramme', id: 'holoObscurite', libelle: 'Hologramme · assombrissement de la scène pendant la projection (0 = aucun)', type: 'nombre', min: 0, max: 0.9, pas: 0.05, defaut: 0.85 },
-    { categorie: 'Hologramme', id: 'holoTremblement', libelle: 'Hologramme · tremblement (0 = stable)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.5 }
+    { categorie: 'Hologramme', id: 'holoTremblement', libelle: 'Hologramme · tremblement (0 = stable)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.3 },
+    { categorie: 'Hologramme', id: 'holoTexte', libelle: 'Hologramme · couleur des textes de la bannière (plus clair = plus lisible)', type: 'couleur', defaut: '#DCEBF7' },
+    { categorie: 'Hologramme', id: 'nomFond', libelle: 'Hologramme · grand nom derrière l\'agent (0 = caché)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.3 },
+    { categorie: 'Hologramme', id: 'ficheZoom', libelle: 'Hologramme · bannière : zoom (1 = taille calculée)', type: 'nombre', min: 0.5, max: 1.8, pas: 0.01, defaut: 1.18 },
+    { categorie: 'Hologramme', id: 'ficheX', libelle: 'Hologramme · bannière : décalage horizontal (px ; négatif = vers la gauche)', type: 'nombre', min: -300, max: 300, pas: 1, defaut: 0 },
+    { categorie: 'Hologramme', id: 'ficheY', libelle: 'Hologramme · bannière : décalage vertical (px ; négatif = vers le haut)', type: 'nombre', min: -300, max: 300, pas: 1, defaut: 0 },
+    { categorie: 'Hologramme', id: 'agentZoom', libelle: 'Hologramme · agent : zoom (1 = taille calculée)', type: 'nombre', min: 0.5, max: 1.8, pas: 0.01, defaut: 1.2 },
+    { categorie: 'Hologramme', id: 'agentX', libelle: 'Hologramme · agent : décalage horizontal (px ; négatif = vers la gauche)', type: 'nombre', min: -300, max: 300, pas: 1, defaut: 0 },
+    { categorie: 'Hologramme', id: 'agentY', libelle: 'Hologramme · agent : décalage vertical (px ; négatif = vers le haut)', type: 'nombre', min: -300, max: 300, pas: 1, defaut: 0 },
+    { categorie: 'Hologramme', id: 'nomFondTaille', libelle: 'Hologramme · grand nom : taille (1 = hauteur de l\'agent)', type: 'nombre', min: 0.4, max: 1.6, pas: 0.01, defaut: 1.06 },
+    { categorie: 'Hologramme', id: 'nomFondY', libelle: 'Hologramme · grand nom : décalage vertical (% ; négatif = plus haut)', type: 'nombre', min: -40, max: 40, pas: 1, defaut: 0 },
+    { categorie: 'Hologramme', id: 'holoLignes', libelle: 'Hologramme · lignes de balayage (0 = aucune)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.55 },
+    { categorie: 'Hologramme', id: 'holoFaisceau', libelle: 'Hologramme · intensité des faisceaux (0 = éteints)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 0.4 },
+    { categorie: 'Layout carte holo', id: 'lcPolices', libelle: 'Layout carte holo · polices (titre / textes / étiquettes)', type: 'choix', defaut: 'theme',
+      options: [{ valeur: 'theme', libelle: 'Thème : police du thème / système / console' }, { valeur: 'tactique', libelle: 'Tactique : Big Shoulders / Instrument Sans / Consolas' },
+        { valeur: 'din', libelle: 'DIN (esprit Valorant) : Bahnschrift condensée / Bahnschrift' }, { valeur: 'scifi', libelle: 'Sci-fi : Michroma / Instrument Sans' },
+        { valeur: 'editorial', libelle: 'Éditorial : Instrument Serif italique / Instrument Sans' }, { valeur: 'terminal', libelle: 'Terminal : Consolas partout' },
+        { valeur: 'affiche', libelle: 'Affiche : Impact / Segoe UI / Consolas' }] },
+    { categorie: 'Layout carte holo', id: 'lcCoins', libelle: 'Layout carte holo · coins coupés de la bannière (cqw, 0 = coins droits)', type: 'nombre', min: 0, max: 15, pas: 0.5, defaut: 11 },
+    { categorie: 'Layout carte holo', id: 'lcCadre', libelle: 'Layout carte holo · trait du cadre (0 = invisible)', type: 'nombre', min: 0, max: 1, pas: 0.05, defaut: 1 },
+    { categorie: 'Layout carte holo', id: 'lcFond', libelle: 'Layout carte holo · fond de la bannière (0 = transparent)', type: 'nombre', min: 0, max: 2, pas: 0.05, defaut: 1 },
+    { categorie: 'Layout carte holo', id: 'lcPhotoHauteur', libelle: 'Layout carte holo · photo : hauteur (part de la bannière ; 0 = automatique, prend la place libre)', type: 'nombre', min: 0, max: 0.85, pas: 0.01, defaut: 0 },
+    { categorie: 'Layout carte holo', id: 'lcPhotoGauche', libelle: 'Layout carte holo · photo : bord gauche (cqw ; 0 = toute la largeur)', type: 'nombre', min: 0, max: 60, pas: 0.5, defaut: 22 },
+    { categorie: 'Layout carte holo', id: 'lcPhotoCadrage', libelle: 'Layout carte holo · photo : cadrage vertical (% ; 0 = haut de la photo)', type: 'nombre', min: 0, max: 100, pas: 1, defaut: 18 },
+    { categorie: 'Layout carte holo', id: 'lcPhotoZoom', libelle: 'Layout carte holo · photo : zoom', type: 'nombre', min: 1, max: 2.5, pas: 0.01, defaut: 1 },
+    { categorie: 'Layout carte holo', id: 'lcPhotoFondu', libelle: 'Layout carte holo · photo : début du fondu vers le bas (% ; 100 = pas de fondu)', type: 'nombre', min: 20, max: 100, pas: 1, defaut: 60 },
+    { categorie: 'Layout carte holo', id: 'lcPseudoSens', libelle: 'Layout carte holo · pseudo : sens', type: 'choix', defaut: 'vertical',
+      options: [{ valeur: 'vertical', libelle: 'Vertical, le long de la photo' }, { valeur: 'horizontal', libelle: 'Horizontal, sur le bas de la photo' }] },
+    { categorie: 'Layout carte holo', id: 'lcPseudoTaille', libelle: 'Layout carte holo · pseudo : remplissage de la longueur libre (1 = comme Medhielm dans le réglage de référence ; s\'adapte à chaque pseudo)', type: 'nombre', min: 0.4, max: 1.04, pas: 0.01, defaut: 1 },
+    { categorie: 'Layout carte holo', id: 'lcPseudoX', libelle: 'Layout carte holo · pseudo : position horizontale (cqw depuis la gauche)', type: 'nombre', min: -10, max: 80, pas: 0.5, defaut: 2 },
+    { categorie: 'Layout carte holo', id: 'lcPseudoY', libelle: 'Layout carte holo · pseudo : position verticale (cqw depuis le bas de la photo)', type: 'nombre', min: -20, max: 80, pas: 0.5, defaut: 6.5 },
+    { categorie: 'Layout carte holo', id: 'lcPseudoEspace', libelle: 'Layout carte holo · pseudo : espacement des lettres (em)', type: 'nombre', min: -0.05, max: 0.4, pas: 0.01, defaut: 0.01 },
+    { categorie: 'Layout carte holo', id: 'lcPseudoContour', libelle: 'Layout carte holo · pseudo : lettres en contour (au lieu de pleines)', type: 'interrupteur', defaut: false },
+    { categorie: 'Layout carte holo', id: 'lcEtiquette', libelle: 'Layout carte holo · numéro « // 01 » en haut à droite', type: 'interrupteur', defaut: true },
+    { categorie: 'Layout carte holo', id: 'lcEtiquetteTaille', libelle: 'Layout carte holo · numéro : taille (cqw)', type: 'nombre', min: 1.5, max: 8, pas: 0.1, defaut: 2.4 },
+    { categorie: 'Layout carte holo', id: 'lcMarge', libelle: 'Layout carte holo · infos : marges gauche et droite (cqw)', type: 'nombre', min: 2, max: 14, pas: 0.5, defaut: 6 },
+    { categorie: 'Layout carte holo', id: 'lcMargeHaut', libelle: 'Layout carte holo · infos : marge au-dessus (cqw)', type: 'nombre', min: 0, max: 14, pas: 0.5, defaut: 0 },
+    { categorie: 'Layout carte holo', id: 'lcMargeBas', libelle: 'Layout carte holo · infos : marge en dessous (cqw)', type: 'nombre', min: 0, max: 16, pas: 0.5, defaut: 5 },
+    { categorie: 'Layout carte holo', id: 'lcEspace', libelle: 'Layout carte holo · infos : espace entre les blocs (cqw)', type: 'nombre', min: 0, max: 10, pas: 0.25, defaut: 4 },
+    { categorie: 'Layout carte holo', id: 'lcRoleTaille', libelle: 'Layout carte holo · rôle : taille du texte (cqw)', type: 'nombre', min: 1.5, max: 7, pas: 0.1, defaut: 4.7 },
+    { categorie: 'Layout carte holo', id: 'lcIconeTaille', libelle: 'Layout carte holo · rôle : taille de l\'icône (cqw)', type: 'nombre', min: 3, max: 14, pas: 0.25, defaut: 8.75 },
+    { categorie: 'Layout carte holo', id: 'lcIdentite', libelle: 'Layout carte holo · identité (prénom, âge, région)', type: 'interrupteur', defaut: true },
+    { categorie: 'Layout carte holo', id: 'lcIdentiteTaille', libelle: 'Layout carte holo · identité : taille du texte (cqw)', type: 'nombre', min: 1.5, max: 6, pas: 0.1, defaut: 3.6 },
+    { categorie: 'Layout carte holo', id: 'lcBio', libelle: 'Layout carte holo · description', type: 'interrupteur', defaut: true },
+    { categorie: 'Layout carte holo', id: 'lcBioTaille', libelle: 'Layout carte holo · description : taille du texte (cqw)', type: 'nombre', min: 1.5, max: 6, pas: 0.1, defaut: 4.1 },
+    { categorie: 'Layout carte holo', id: 'lcBioInterligne', libelle: 'Layout carte holo · description : interligne', type: 'nombre', min: 1, max: 1.8, pas: 0.05, defaut: 1.2 },
+    { categorie: 'Layout carte holo', id: 'lcObjets', libelle: 'Layout carte holo · setup (objets)', type: 'interrupteur', defaut: true },
+    { categorie: 'Layout carte holo', id: 'lcObjetsColonnes', libelle: 'Layout carte holo · setup : objets par ligne', type: 'nombre', min: 2, max: 5, pas: 1, defaut: 4 },
+    { categorie: 'Layout carte holo', id: 'lcObjetsEspace', libelle: 'Layout carte holo · setup : espace entre les objets (cqw)', type: 'nombre', min: 0, max: 8, pas: 0.25, defaut: 3 },
+    { categorie: 'Layout carte holo', id: 'lcObjetIcone', libelle: 'Layout carte holo · setup : taille de l\'icône dans sa case (%)', type: 'nombre', min: 25, max: 90, pas: 1, defaut: 63 },
+    { categorie: 'Layout carte holo', id: 'lcObjetType', libelle: 'Layout carte holo · setup : type écrit dans la case (Clavier, Souris…)', type: 'interrupteur', defaut: true },
+    { categorie: 'Layout carte holo', id: 'lcObjetModele', libelle: 'Layout carte holo · setup : modèle écrit sous la case', type: 'interrupteur', defaut: true },
+    { categorie: 'Layout carte holo', id: 'lcObjetTexte', libelle: 'Layout carte holo · setup : taille du modèle (cqw)', type: 'nombre', min: 1.5, max: 5, pas: 0.1, defaut: 2.5 }
   ],
   css: `
 .mc-scene { position: absolute; inset: 0; --h: 600px; --long: 720px; }
@@ -219,6 +310,22 @@ const EffetMaillotCartes = {
 .mcj-identite small { display: block; font: 700 3.6cqw/1 system-ui, sans-serif; letter-spacing: .3em; text-transform: uppercase; color: var(--metal-clair); }
 .mcj-pseudo { margin: 1.5cqw 0 0; font: 800 15cqw/.9 var(--police-titre, "Arial Narrow", sans-serif); text-transform: uppercase; letter-spacing: .02em; color: var(--mcj-encre, var(--couleur-texte)); }
 .mcj-panneau { box-sizing: border-box; height: var(--panneau); padding: 10px 7cqw 12px; display: grid; align-content: space-between; }
+.mcj-avant--pro .mcj-photo { height: calc(var(--carte-l) * 1.25 + var(--panneau) * var(--photo-gain, .3)); }
+.mcj-avant--pro .mcj-panneau { height: calc(var(--panneau) * (1 - var(--photo-gain, .3))); padding-top: 4px; padding-bottom: 9px; align-content: end; gap: 6px; }
+.mcj-direct { position: absolute; left: 4cqw; top: 4cqw; display: none; align-items: center; gap: 1.6cqw; padding: 1.2cqw 2.6cqw; border-radius: 999px;
+  font: 800 3.2cqw/1 system-ui, sans-serif; letter-spacing: .14em; color: var(--mcj-encre, var(--couleur-texte)); background: color-mix(in srgb, var(--couleur-direct) 85%, transparent);
+  box-shadow: 0 0 3cqw color-mix(in srgb, var(--couleur-direct) 60%, transparent); }
+.mcj-direct i { width: 1.8cqw; height: 1.8cqw; border-radius: 50%; background: var(--mcj-encre, var(--couleur-texte)); animation: mcj-direct 1.2s ease-in-out infinite; }
+@keyframes mcj-direct { 50% { opacity: .2; } }
+.mc-scene[data-direct] .mcj-direct { display: inline-flex; }
+.mcj-bande { display: flex; align-items: center; justify-content: space-between; gap: 6px; font: 600 9px/1 system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.mcj-bande > span { display: flex; align-items: center; gap: 4px; opacity: .75; min-width: 0; white-space: nowrap; overflow: hidden; }
+.mcj-bande svg { flex: none; width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.mcj-reseaux { display: flex; gap: 7px; color: var(--metal-clair); }
+.mcj-reseaux .en-direct { color: var(--couleur-direct); }
+.mc-scene:not([data-reseaux]) .mcj-bande, .mc-scene:not([data-reglages-pro]) .mcj-avant--pro .mcj-stats { display: none; }
+.mc-scene[data-compact] .mcj-bande { display: none; }
+.mc-scene[data-calme] .mcj-direct i { animation: none; }
 .mcj-ligne { display: flex; justify-content: space-between; gap: 8px; font: 700 12px/1.2 system-ui, sans-serif; }
 .mcj-ligne span { display: block; font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; opacity: .55; margin-bottom: 3px; }
 .mcj-ligne > div:last-child { text-align: right; }
@@ -285,9 +392,11 @@ const EffetMaillotCartes = {
 @keyframes mcj-indice-contour { 0%, 38% { opacity: 0; } 41% { opacity: var(--c-lisere, 1); } 80%, 100% { opacity: 0; } }
 @keyframes mcj-appel { 0% { opacity: .95; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.09); } }
 .mcj-dos p, .mcj-carte p { max-width: none; opacity: 1; }
-.mcj-holo { position: absolute; top: 0; bottom: 0; left: var(--holo-x); width: var(--holo-l); pointer-events: none; opacity: 0; transition: opacity .35s ease-out; }
+.mcj-holo { position: absolute; top: 0; bottom: 0; left: var(--holo-x); width: var(--holo-l); pointer-events: none; opacity: 0; transition: opacity .35s ease-out;
+  transform: translate(var(--fiche-dx, 0px), var(--fiche-dy, 0px)) scale(var(--fiche-zoom, 1)); transform-origin: 50% 100%; }
+.mcj-holo--agent { transform: translate(var(--agent-dx, 0px), var(--agent-dy, 0px)) scale(var(--agent-zoom, 1)); }
 .mcj-holo.visible { opacity: 1; }
-.mcj-holo-faisceau { position: absolute; left: 0; right: 0; top: calc(var(--holo-haut) + var(--holo-h) * .67); bottom: 6px; clip-path: polygon(50% 100%, 0 0, 100% 0);
+.mcj-holo-faisceau { position: absolute; left: 0; right: 0; top: calc(var(--holo-haut) + var(--holo-h) * .67); bottom: 6px; clip-path: polygon(50% 100%, 0 0, 100% 0); opacity: var(--faisceau, 1);
   background: linear-gradient(0deg,
     color-mix(in srgb, var(--holo-couleur) 75%, transparent) 0%,
     color-mix(in srgb, var(--holo-couleur) 52%, transparent) 12%,
@@ -310,7 +419,7 @@ const EffetMaillotCartes = {
 .mcj-holo-image { position: absolute; inset: 0; overflow: hidden; border-radius: 12px; filter: grayscale(1) contrast(1.25) brightness(1.15); }
 .mcj-holo-image > .mcj-face { inset: auto; left: 0; top: 0; width: var(--carte-l); height: calc(var(--carte-l) * 1.25 + var(--panneau)); transform-origin: 0 0; transform: scale(var(--holo-echelle)); }
 .mcj-holo-teinte { position: absolute; inset: 0; border-radius: 12px; background: var(--holo-couleur); mix-blend-mode: color; }
-.mcj-holo-lignes { position: absolute; inset: -8px 0 0; background: repeating-linear-gradient(0deg, var(--couleur-nuit) 0 2px, transparent 2px 5px); opacity: .55; }
+.mcj-holo-lignes { position: absolute; inset: -8px 0 0; background: repeating-linear-gradient(0deg, var(--couleur-nuit) 0 2px, transparent 2px 5px); opacity: var(--holo-lignes, .55); }
 .mcj-holo.visible .mcj-holo-lignes { animation: mcj-holo-lignes .9s linear infinite; }
 @keyframes mcj-holo-lignes { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, 5px, 0); } }
 @keyframes mcj-holo-tremble {
@@ -323,7 +432,7 @@ const EffetMaillotCartes = {
   69% { transform: translate3d(0, 0, 0); opacity: 1; }
   88% { transform: translate3d(calc(var(--holo-force) * -4px), 0, 0); opacity: calc(1 - var(--holo-force) * .5); }
   89% { transform: translate3d(0, 0, 0); opacity: 1; } }
-@keyframes mcj-holo-scintille { 0% { opacity: 1; } 37% { opacity: .8; } 39% { opacity: 1; } 87% { opacity: .65; } 89% { opacity: 1; } }
+@keyframes mcj-holo-scintille { 0% { opacity: var(--faisceau, 1); } 37% { opacity: calc(var(--faisceau, 1) * .8); } 39% { opacity: var(--faisceau, 1); } 87% { opacity: calc(var(--faisceau, 1) * .65); } 89% { opacity: var(--faisceau, 1); } }
 .mcj-holo--agent .mcj-holo-image { border-radius: 0; overflow: visible; }
 .mcj-holo-agent-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .mcj-holo--agent .mcj-holo-teinte { border-radius: 0; -webkit-mask: var(--agent-masque) center / contain no-repeat; mask: var(--agent-masque) center / contain no-repeat; }
@@ -344,6 +453,115 @@ const EffetMaillotCartes = {
 .mc-scene[data-univers="tajine"] .mcj-holo--agent.visible .mcj-holo-nom { opacity: .95; transition-delay: 1s; }
 .mcj-holo--agent .mcj-holo-source { left: 38%; right: 38%; }
 .mcj-holo--agent.visible .mcj-holo-tremble { animation-delay: -1.1s; }
+.mcj-nom-fond { position: absolute; left: 50%; top: 48%; height: calc(88% * var(--nom-fond-taille, 1)); aspect-ratio: 700 / 1024; transform: translate(-50%, calc(-50% + var(--nom-fond-y, 0%))); background: var(--holo-couleur); opacity: var(--nom-fond, .3);
+  -webkit-mask: var(--fond) center / contain no-repeat; mask: var(--fond) center / contain no-repeat; }
+.mc-scene[data-univers="tajine"] .mcj-nom-fond { display: none; }
+.mcj-holo--fiche .mcj-holo-image { filter: none; border-radius: 0; overflow: visible; container-type: inline-size; }
+.mcj-holo--fiche .mcj-holo-teinte { display: none; }
+.mcj-holo--fiche .mcj-holo-faisceau { left: 26%; right: 26%; top: calc(var(--holo-haut) + var(--holo-h)); }
+.mcb-carte { position: absolute; inset: 0; color: var(--holo-texte); font-family: var(--lc-texte, system-ui, sans-serif); text-align: left;
+  --holo-doux: color-mix(in srgb, var(--holo-couleur) 45%, transparent); --holo-pale: color-mix(in srgb, var(--holo-couleur) 16%, transparent);
+  clip-path: polygon(0 0, calc(100% - var(--lc-coins, 6cqw)) 0, 100% var(--lc-coins, 6cqw), 100% 100%, var(--lc-coins, 6cqw) 100%, 0 calc(100% - var(--lc-coins, 6cqw))); }
+.mcb-carte::before { content: ""; position: absolute; inset: 0; opacity: var(--lc-fond, 1);
+  background: linear-gradient(160deg, var(--holo-pale), color-mix(in srgb, var(--holo-couleur) 4%, transparent) 70%); }
+.mcb-carte p { margin: 0; max-width: none; opacity: 1; }
+.mcb-cadre { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: var(--lc-cadre, 1); }
+.mcb-cadre polygon { fill: none; stroke: var(--holo-doux); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.mcb-contenu { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.mcb-haut { position: relative; flex: 1; min-height: 0; }
+.mc-scene[data-lc-photo-fixe] .mcb-haut { flex: 0 0 calc(var(--lc-photo-hauteur) * 100%); }
+.mcb-photo { position: absolute; left: var(--lc-photo-gauche, 22cqw); right: 0; top: 0; bottom: 0; overflow: hidden; isolation: isolate;
+  -webkit-mask: linear-gradient(#000 var(--lc-fondu, 60%), transparent 100%); mask: linear-gradient(#000 var(--lc-fondu, 60%), transparent 100%);
+  background: radial-gradient(circle at 50% 38%, var(--couleur-lueur) 0 18%, transparent 19%), radial-gradient(ellipse 60% 40% at 50% 100%, var(--couleur-lueur) 0 70%, transparent 71%), var(--couleur-surface); }
+.mcb-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% var(--lc-cadrage, 18%);
+  transform: scale(var(--lc-photo-zoom, 1)); transform-origin: 50% var(--lc-cadrage, 18%); filter: grayscale(1) contrast(1.15) brightness(1.08); }
+.mcb-photo.mcb-sans-photo img { display: none; }
+.mcb-teinte { position: absolute; inset: 0; background: var(--holo-couleur); mix-blend-mode: color; }
+.mcb-tiroir { position: absolute; left: 100%; top: 20%; overflow: hidden; padding: 3cqw 3cqw 3cqw 0; margin: -3cqw 0 0; pointer-events: none; }
+.mcb-tiroir-interieur { display: grid; gap: 2.6cqw; padding: 2.6cqw 2.6cqw 2.6cqw 2.2cqw; pointer-events: auto;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--holo-couleur) 22%, transparent), color-mix(in srgb, var(--holo-couleur) 8%, transparent));
+  border: 1px solid color-mix(in srgb, var(--holo-couleur) 45%, transparent); border-left: 0;
+  clip-path: polygon(0 0, calc(100% - 3cqw) 0, 100% 3cqw, 100% calc(100% - 3cqw), calc(100% - 3cqw) 100%, 0 100%);
+  transform: translateX(-102%); animation: mcb-tiroir-sort .55s cubic-bezier(.2, .9, .3, 1.25) 1s forwards; }
+@keyframes mcb-tiroir-sort { to { transform: none; } }
+.mcb-tiroir-interieur { position: relative; overflow: hidden; }
+.mcb-tiroir-interieur::before { content: ""; position: absolute; inset: -8px 0 0; pointer-events: none; opacity: var(--holo-lignes, .55);
+  background: repeating-linear-gradient(0deg, var(--couleur-nuit) 0 2px, transparent 2px 5px); animation: mcj-holo-lignes .9s linear infinite; }
+.mcb-tiroir-interieur > * { z-index: 1; }
+.mcb-bouton { position: relative; display: grid; place-items: center; width: 11cqw; height: 11cqw; cursor: pointer; color: var(--holo-texte); outline: none;
+  opacity: 0; animation: mcb-bouton-allume .35s ease-out forwards; animation-delay: calc(1.35s + var(--rang, 0) * .1s);
+  transition: transform .35s cubic-bezier(.3, 1.8, .4, 1), filter .2s, color .2s; }
+.mcb-bouton:nth-child(2) { --rang: 1; }
+.mcb-bouton:nth-child(3) { --rang: 2; }
+@keyframes mcb-bouton-allume { 0% { opacity: 0; } 40% { opacity: 1; } 55% { opacity: .3; } 100% { opacity: 1; } }
+.mcb-bouton-fond { position: absolute; inset: 0; overflow: hidden; clip-path: polygon(0 0, 72% 0, 100% 28%, 100% 100%, 0 100%);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--holo-couleur) 32%, transparent), color-mix(in srgb, var(--holo-couleur) 12%, transparent)); transition: background .2s; }
+.mcb-bouton-fond::after { content: ""; position: absolute; left: 14%; right: 14%; bottom: 8%; height: 2px; background: var(--holo-couleur); opacity: .8; }
+.mcb-bouton-fond::before { content: ""; position: absolute; inset: -20%; background: linear-gradient(115deg, transparent 35%, color-mix(in srgb, var(--holo-texte) 75%, transparent) 50%, transparent 65%); transform: translateX(-120%); }
+.mcb-bouton svg { position: relative; z-index: 1; width: 56%; height: 56%; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s cubic-bezier(.3, 1.8, .4, 1); }
+.mcb-bouton:hover, .mcb-bouton:focus-visible { transform: scale(1.2); color: var(--couleur-nuit);
+  filter: drop-shadow(0 0 1.5cqw var(--holo-couleur)) drop-shadow(0 0 4cqw color-mix(in srgb, var(--holo-couleur) 70%, transparent)); }
+.mcb-bouton:hover .mcb-bouton-fond, .mcb-bouton:focus-visible .mcb-bouton-fond { background: var(--holo-texte); animation: mcb-flash .45s ease-out; }
+.mcb-bouton:hover .mcb-bouton-fond::before, .mcb-bouton:focus-visible .mcb-bouton-fond::before { transform: translateX(120%); transition: transform .5s ease-out; }
+.mcb-bouton:hover svg, .mcb-bouton:focus-visible svg { transform: rotate(-10deg) scale(1.08); }
+@keyframes mcb-flash { 0% { filter: brightness(1.8); } 100% { filter: none; } }
+.mcb-bouton:active { transform: scale(.94); transition-duration: .08s; }
+.mcb-bouton.en-direct { color: var(--couleur-direct); }
+.mcb-bouton.en-direct .mcb-bouton-fond { background: color-mix(in srgb, var(--couleur-direct) 22%, transparent); }
+.mcb-bouton.en-direct .mcb-bouton-fond::after { background: var(--couleur-direct); }
+.mcb-bouton.en-direct:hover, .mcb-bouton.en-direct:focus-visible { color: var(--holo-texte);
+  filter: drop-shadow(0 0 1.5cqw var(--couleur-direct)) drop-shadow(0 0 4cqw color-mix(in srgb, var(--couleur-direct) 70%, transparent)); }
+.mcb-bouton.en-direct:hover .mcb-bouton-fond, .mcb-bouton.en-direct:focus-visible .mcb-bouton-fond { background: var(--couleur-direct); }
+.mc-scene[data-calme] .mcb-tiroir-interieur { animation: none; transform: none; }
+.mc-scene[data-calme] .mcb-tiroir-interieur::before { animation: none; }
+.mc-scene[data-calme] .mcb-bouton { animation: none; opacity: 1; transition: none; }
+.mc-scene[data-calme] .mcb-bouton-fond::before { display: none; }
+.mcb-direct { display: block; pointer-events: auto; cursor: pointer; color: var(--holo-texte); text-decoration: none; -webkit-mask: none; mask: none; }
+.mcb-direct img { filter: saturate(1.1) contrast(1.05); object-position: 50% 50%; }
+.mcb-direct::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--couleur-nuit) 85%, transparent) 100%); }
+.mcb-direct-badge { position: absolute; z-index: 1; right: 4cqw; top: 12cqw; display: inline-flex; align-items: center; gap: 1.4cqw; padding: 1cqw 2.2cqw; border-radius: 1cqw;
+  font: 800 3cqw/1 system-ui, sans-serif; letter-spacing: .14em; color: var(--holo-texte); background: var(--couleur-direct); }
+.mcb-direct-badge i { width: 1.6cqw; height: 1.6cqw; border-radius: 50%; background: currentColor; animation: mcj-direct 1.2s ease-in-out infinite; }
+.mcb-direct-lecture { position: absolute; z-index: 1; left: 50%; top: 38%; width: 14cqw; height: 14cqw; margin: -7cqw 0 0 -7cqw; border-radius: 50%;
+  background: color-mix(in srgb, var(--couleur-nuit) 55%, transparent); box-shadow: 0 0 0 .4cqw var(--holo-texte); transition: transform .2s; }
+.mcb-direct-lecture::before { content: ""; position: absolute; left: 39%; top: 30%; border-left: 5.6cqw solid var(--holo-texte); border-top: 3.4cqw solid transparent; border-bottom: 3.4cqw solid transparent; }
+.mcb-direct-infos { position: absolute; z-index: 1; left: 4cqw; right: 4cqw; bottom: 9cqw; font: 600 max(7px, 2.6cqw)/1.35 system-ui, sans-serif; text-shadow: 0 0 1cqw var(--couleur-nuit), 0 0 2cqw var(--couleur-nuit); }
+.mcb-direct-infos b { display: block; font-size: 1.25em; font-weight: 800; }
+.mcb-direct-ouvrir { position: absolute; z-index: 1; left: 4cqw; top: 12cqw; padding: 1cqw 2cqw; font: 700 max(7px, 2.6cqw)/1 system-ui, sans-serif; letter-spacing: .08em;
+  color: var(--holo-texte); background: color-mix(in srgb, var(--couleur-nuit) 70%, transparent); opacity: 0; transition: opacity .2s; }
+.mcb-direct:hover .mcb-direct-ouvrir, .mcb-direct:focus-visible .mcb-direct-ouvrir { opacity: 1; }
+.mcb-direct:hover .mcb-direct-lecture { transform: scale(1.1); }
+.mcj-holo:not(.visible) .mcb-direct, .mcj-holo:not(.visible) .mcb-tiroir-interieur, .mcj-holo:not(.visible) .mcb-bouton { pointer-events: none; }
+.mcb-pseudo--direct { color: var(--couleur-direct); text-shadow: 0 0 2.5cqw color-mix(in srgb, var(--couleur-direct) 50%, transparent); }
+.mc-scene[data-calme] .mcb-direct-badge i { animation: none; }
+.mcb-pseudo { position: absolute; left: var(--lc-pseudo-x, 4cqw); bottom: var(--lc-pseudo-y, 2cqw); writing-mode: vertical-rl; transform: rotate(180deg) scaleX(var(--etirement, 1)); white-space: nowrap;
+  --longueur: 68cqw; --maxi: 21cqw;
+  font-family: var(--lc-titre, var(--police-titre, "Arial Narrow", sans-serif)); font-weight: var(--lc-titre-poids, 800); font-style: var(--lc-titre-style, normal);
+  font-size: calc(min(var(--maxi), var(--longueur) / (var(--lettres) * var(--lc-lettre, .5))) * var(--lc-pseudo-taille, 1)); line-height: .85;
+  text-transform: uppercase; letter-spacing: var(--lc-pseudo-espace, .01em); text-shadow: 0 0 2.5cqw var(--holo-doux); }
+.mc-scene[data-lc-pseudo-horizontal] .mcb-pseudo { writing-mode: horizontal-tb; transform: none; --longueur: 88cqw; --maxi: 18cqw; }
+.mc-scene[data-lc-pseudo-contour] .mcb-pseudo { color: transparent; -webkit-text-stroke: max(1px, .3cqw) var(--holo-texte); }
+.mcb-etiquette { position: absolute; right: 6cqw; top: 6cqw; font: 600 max(7px, var(--lc-etiquette-taille, 2.4cqw))/1 var(--lc-etiquettes, ui-monospace, Consolas, monospace); letter-spacing: .22em; text-transform: uppercase; opacity: .75; }
+.mcb-bas { display: grid; gap: var(--lc-espace, 4cqw); padding: var(--lc-marge-haut, 5cqw) var(--lc-marge, 6cqw) var(--lc-marge-bas, 8cqw); }
+.mcb-role { display: flex; align-items: center; gap: 2.2cqw; font-weight: 700; font-size: max(7px, var(--lc-role-taille, 3cqw)); line-height: 1.15; letter-spacing: .16em; text-transform: uppercase; }
+.mcb-role small { display: block; font-size: .78em; font-weight: 600; opacity: .7; }
+.mcb-icone { flex: none; width: var(--lc-icone-taille, 6.5cqw); height: var(--lc-icone-taille, 6.5cqw); background: var(--holo-texte); -webkit-mask: var(--icone) center / contain no-repeat; mask: var(--icone) center / contain no-repeat; }
+.mcb-identite { margin-top: -2cqw !important; font-weight: 600; font-size: max(7px, var(--lc-identite-taille, 2.8cqw)); line-height: 1.2; letter-spacing: .08em; opacity: .75; }
+.mcb-bio { display: grid; gap: 1.2cqw; font-weight: 500; font-size: max(7px, var(--lc-bio-taille, 3.2cqw)); line-height: var(--lc-bio-interligne, 1.3); }
+.mcb-bio p::before { content: '◆'; margin-right: 1.8cqw; font-size: .65em; vertical-align: .18em; color: var(--holo-couleur); }
+.mcb-objets { display: grid; grid-template-columns: repeat(var(--lc-colonnes, 4), minmax(0, 1fr)); gap: var(--lc-objets-espace, 3cqw); }
+.mcb-objet { display: grid; justify-items: center; align-content: start; gap: 1.4cqw; text-align: center; min-width: 0; }
+.mcb-case { position: relative; width: 100%; aspect-ratio: 1; display: grid; place-items: center;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--holo-couleur) 26%, transparent), var(--holo-pale));
+  clip-path: polygon(0 0, 78% 0, 100% 22%, 100% 100%, 0 100%); }
+.mcb-case::after { content: ""; position: absolute; left: 12%; right: 12%; bottom: 7%; height: 2px; background: var(--holo-couleur); opacity: .7; }
+.mcb-case svg { width: var(--lc-objet-icone, 54%); height: var(--lc-objet-icone, 54%); fill: none; stroke: var(--holo-texte); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px var(--holo-couleur)); }
+.mcb-case i { position: absolute; left: 9%; top: 8%; font: 700 max(6px, 1.9cqw)/1 var(--lc-etiquettes, ui-monospace, Consolas, monospace); font-style: normal; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+.mcb-objet > span { font-weight: 600; font-size: max(6px, var(--lc-objet-texte, 2.3cqw)); line-height: 1.2; letter-spacing: .04em; opacity: .9; overflow-wrap: anywhere; }
+.mc-scene[data-lc-sans-etiquette] .mcb-etiquette, .mc-scene[data-lc-sans-identite] .mcb-identite, .mc-scene[data-lc-sans-bio] .mcb-bio,
+.mc-scene[data-lc-sans-objets] .mcb-objets, .mc-scene[data-lc-sans-objets] .mcb-vide, .mc-scene[data-lc-sans-type] .mcb-case i,
+.mc-scene[data-lc-sans-modele] .mcb-objet > span { display: none; }
+.mcb-vide { font: 600 max(8px, 2.6cqw)/1 var(--lc-etiquettes, ui-monospace, Consolas, monospace); letter-spacing: .2em; text-transform: uppercase; opacity: .6; }
 .mcj-obscurite { position: absolute; inset: -300vh -300vw; z-index: 45; background: var(--couleur-nuit); opacity: 0; pointer-events: none; transition: opacity .5s ease-out; }
 .mc-obscurite-fond { position: absolute; inset: 0; z-index: 1; background: var(--couleur-nuit); opacity: 0; pointer-events: none; transition: opacity .5s ease-out; }
 .mc-toile { transition: opacity .5s ease-out; }
@@ -403,6 +621,7 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
     const ourletDos = '<svg class="mc-ourlet" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,20 50,6 100,20" style="fill:var(--mc-ourlet)"/><polyline points="0,20 50,6 100,20" fill="none" style="stroke:var(--metal-moyen)" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>';
     const univers = getComputedStyle(conteneur).getPropertyValue('--univers').trim() === 'tajine' ? 'tajine' : 'normal';
     const joueurs = univers === 'tajine' ? this.joueursTajine : this.joueurs;
+    const icones = this.icones;
     const texte = this.textes[univers];
     joueurs.forEach(j => { if (j.agentImage) new Image().src = j.agentImage; });
     scene.dataset.univers = univers;
@@ -415,18 +634,26 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
       '<polygon points="0,20 50,4 100,20" style="fill:var(--couleur-nuit)"/>' +
       '<polyline points="0,20 50,4 100,20" fill="none" style="stroke:var(--metal-moyen)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>';
     const curseurIndice = '<span class="mcj-curseur" aria-hidden="true"></span>';
+    const pro = univers !== 'tajine';
+    const iconesFace = this.iconesFace;
+    const icone = nom => '<svg viewBox="0 0 24 24" aria-hidden="true">' + iconesFace[nom] + '</svg>';
+    const panneauPro = j =>
+      '<div class="mcj-bande"><span>' + icone('lieu') + 'FR · ' + j.region + '</span><span class="mcj-reseaux" aria-label="Réseaux : ' + j.reseaux.join(', ') + '">' +
+        j.reseaux.map(nom => '<i class="' + (nom === 'twitch' && j.direct ? 'en-direct' : '') + '">' + icone(nom) + '</i>').join('') + '</span></div>' +
+      '<div class="mcj-stats"><div><b>' + String(j.sensi).replace('.', ',') + '</b><span>Sensi</span></div><div><b>' + j.dpi + '</b><span>DPI</span></div><div><b>' + Math.round(j.sensi * j.dpi) + '</b><span>eDPI</span></div></div>';
     const carte = (j, i) =>
       '<div class="mcj-carte" data-i="' + i + '" role="button" tabindex="0" aria-label="' + j.pseudo + ', ' + j.role + ' : retourner la carte"><div class="mcj-entree">' +
         '<div class="mcj-survol"><div class="mcj-flotte"><div class="mcj-pivot">' +
-          '<div class="mcj-face mcj-avant">' +
+          '<div class="mcj-face mcj-avant' + (pro ? ' mcj-avant--pro' : '') + '">' +
             '<div class="mcj-photo"><img src="' + j.photo + '" alt="' + j.pseudo + '" decoding="async">' +
               '<span class="mcj-teinte"></span><span class="mcj-trame"></span><span class="mcj-degrade"></span><span class="mcj-brillance"></span>' +
               '<span class="mcj-numero">' + j.numero + '</span>' +
+              (pro && j.direct ? '<span class="mcj-direct"><i></i>EN LIVE</span>' : '') +
               '<div class="mcj-identite"><small>' + j.role + '</small><p class="mcj-pseudo">' + j.pseudo + '</p></div>' +
             '</div>' +
-            '<div class="mcj-panneau">' +
+            '<div class="mcj-panneau">' + (pro ? panneauPro(j) :
               '<div class="mcj-ligne"><div><span>' + texte.role + '</span>' + j.role + '</div><div><span>' + texte.agent + '</span><i class="mcj-losange"></i>' + j.agent + '</div></div>' +
-              '<div class="mcj-stats"><div><b>' + j.acs + '</b><span>' + texte.stats[0] + '</span></div><div><b>' + j.kd + '</b><span>' + texte.stats[1] + '</span></div><div><b>' + j.hs + '%</b><span>' + texte.stats[2] + '</span></div></div>' +
+              '<div class="mcj-stats"><div><b>' + j.acs + '</b><span>' + texte.stats[0] + '</span></div><div><b>' + j.kd + '</b><span>' + texte.stats[1] + '</span></div><div><b>' + j.hs + '%</b><span>' + texte.stats[2] + '</span></div></div>') +
             '</div>' +
           '</div>' +
           '<div class="mcj-face mcj-dos" aria-hidden="true">' + colCarte +
@@ -447,7 +674,7 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
           '<div class="mcj-holo-projection"><div class="mcj-holo-tremble"><div class="mcj-holo-image"></div><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span></div></div>' +
           '<div class="mcj-holo-source"></div></div>' +
         '<div class="mcj-holo mcj-holo--agent" aria-hidden="true"><div class="mcj-holo-faisceau"></div><span class="mcj-holo-nom"></span>' +
-          '<div class="mcj-holo-projection"><div class="mcj-holo-tremble"><div class="mcj-holo-image"><img class="mcj-holo-agent-img" alt="" decoding="async"></div><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span></div></div>' +
+          '<div class="mcj-holo-projection"><span class="mcj-nom-fond"></span><div class="mcj-holo-tremble"><div class="mcj-holo-image"><img class="mcj-holo-agent-img" alt="" decoding="async"></div><span class="mcj-holo-teinte"></span><span class="mcj-holo-lignes"></span></div></div>' +
           '<div class="mcj-holo-source"></div></div>' +
       '</div>';
     scene.innerHTML =
@@ -497,6 +724,7 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
     const voiles = cartes.map(c => c.querySelector('.mcj-voile'));
     const flottes = cartes.map(c => c.querySelector('.mcj-flotte'));
     const holo = scene.querySelector('.mcj-holo');
+    holo.classList.toggle('mcj-holo--fiche', univers !== 'tajine');
     const holoImage = scene.querySelector('.mcj-holo-image');
     const holoAgent = scene.querySelector('.mcj-holo--agent');
     const imageAgent = scene.querySelector('.mcj-holo-agent-img');
@@ -632,10 +860,11 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
       const libreDroite = largeur / 2 - largeurChoisie / 2 - 24;
       const ecartFaisceau = Math.max(50, zoneHauteur * 0.14);
       let hauteurHolo = 0, hautHolo = 0;
-      let holoL = Math.min(largeurCarte * r.holoTaille, (libreDroite - 24) * 0.9, ((zoneHauteur - ecartFaisceau) * largeurCarte) / hauteurCarte);
-      holoDisponible = !etroit && holoL >= 120;
+      const rapport = univers === 'tajine' ? hauteurCarte / largeurCarte : 1.5;
+      let holoL = Math.min(largeurCarte * r.holoTaille, (libreDroite - 24) * 0.9, (zoneHauteur - ecartFaisceau) / rapport);
+      holoDisponible = !etroit && holoL >= (univers === 'tajine' ? 120 : 180);
       if (holoDisponible) {
-        const holoH = (hauteurCarte * holoL) / largeurCarte;
+        const holoH = holoL * rapport;
         hauteurHolo = holoH;
         hautHolo = Math.max(0, zoneHauteur - ecartFaisceau - holoH);
         scene.style.setProperty('--holo-l', holoL + 'px');
@@ -698,6 +927,41 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
       v('--c-delai', r.curseurDelai + 's');
       v('--c-survol', String(r.carteSurvol));
     }
+    const POLICES_CARTE = {
+      theme: { titre: 'var(--police-titre, "Arial Narrow", sans-serif)', poids: 800, style: 'normal', texte: 'system-ui, sans-serif', etiquettes: 'ui-monospace, Consolas, monospace', lettre: 0.5 },
+      tactique: { titre: '"Big Shoulders Display", "Arial Narrow", sans-serif', poids: 800, style: 'normal', texte: '"Instrument Sans", system-ui, sans-serif', etiquettes: 'Consolas, ui-monospace, monospace', lettre: 0.5 },
+      din: { titre: '"Bahnschrift Condensed", "Bahnschrift", "Arial Narrow", sans-serif', poids: 700, style: 'normal', texte: '"Bahnschrift", "Segoe UI", system-ui, sans-serif', etiquettes: '"Bahnschrift SemiCondensed", "Bahnschrift", Consolas, monospace', lettre: 0.5 },
+      scifi: { titre: '"Michroma", "Segoe UI", sans-serif', poids: 400, style: 'normal', texte: '"Instrument Sans", system-ui, sans-serif', etiquettes: '"Michroma", Consolas, monospace', lettre: 0.95 },
+      editorial: { titre: '"Instrument Serif", Georgia, serif', poids: 400, style: 'italic', texte: '"Instrument Sans", system-ui, sans-serif', etiquettes: 'Consolas, ui-monospace, monospace', lettre: 0.48 },
+      terminal: { titre: 'Consolas, ui-monospace, monospace', poids: 700, style: 'normal', texte: 'Consolas, ui-monospace, monospace', etiquettes: 'Consolas, ui-monospace, monospace', lettre: 0.55 },
+      affiche: { titre: 'Impact, "Arial Narrow", sans-serif', poids: 400, style: 'normal', texte: '"Segoe UI", system-ui, sans-serif', etiquettes: 'Consolas, ui-monospace, monospace', lettre: 0.48 }
+    };
+    function appliquerLayoutCarte() {
+      const v = (nom, valeur) => scene.style.setProperty(nom, String(valeur));
+      const p = POLICES_CARTE[r.lcPolices] || POLICES_CARTE.theme;
+      v('--lc-titre', p.titre); v('--lc-titre-poids', p.poids); v('--lc-titre-style', p.style);
+      v('--lc-texte', p.texte); v('--lc-etiquettes', p.etiquettes); v('--lc-lettre', p.lettre);
+      v('--lc-coins', r.lcCoins + 'cqw'); v('--lc-cadre', r.lcCadre); v('--lc-fond', r.lcFond);
+      v('--lc-photo-hauteur', r.lcPhotoHauteur); v('--lc-photo-gauche', r.lcPhotoGauche + 'cqw'); v('--lc-cadrage', r.lcPhotoCadrage + '%');
+      v('--lc-photo-zoom', r.lcPhotoZoom); v('--lc-fondu', r.lcPhotoFondu + '%');
+      v('--lc-pseudo-taille', r.lcPseudoTaille); v('--lc-pseudo-x', r.lcPseudoX + 'cqw'); v('--lc-pseudo-y', r.lcPseudoY + 'cqw'); v('--lc-pseudo-espace', r.lcPseudoEspace + 'em');
+      v('--lc-etiquette-taille', r.lcEtiquetteTaille + 'cqw');
+      v('--lc-marge', r.lcMarge + 'cqw'); v('--lc-marge-haut', r.lcMargeHaut + 'cqw'); v('--lc-marge-bas', r.lcMargeBas + 'cqw'); v('--lc-espace', r.lcEspace + 'cqw');
+      v('--lc-role-taille', r.lcRoleTaille + 'cqw'); v('--lc-icone-taille', r.lcIconeTaille + 'cqw'); v('--lc-identite-taille', r.lcIdentiteTaille + 'cqw');
+      v('--lc-bio-taille', r.lcBioTaille + 'cqw'); v('--lc-bio-interligne', r.lcBioInterligne);
+      v('--lc-colonnes', r.lcObjetsColonnes); v('--lc-objets-espace', r.lcObjetsEspace + 'cqw'); v('--lc-objet-icone', r.lcObjetIcone + '%'); v('--lc-objet-texte', r.lcObjetTexte + 'cqw');
+      const attribut = (nom, oui) => scene.toggleAttribute(nom, oui);
+      attribut('data-lc-photo-fixe', r.lcPhotoHauteur > 0);
+      attribut('data-lc-pseudo-horizontal', r.lcPseudoSens === 'horizontal');
+      attribut('data-lc-pseudo-contour', r.lcPseudoContour);
+      attribut('data-lc-sans-etiquette', !r.lcEtiquette);
+      attribut('data-lc-sans-identite', !r.lcIdentite);
+      attribut('data-lc-sans-bio', !r.lcBio);
+      attribut('data-lc-sans-objets', !r.lcObjets);
+      attribut('data-lc-sans-type', !r.lcObjetType);
+      attribut('data-lc-sans-modele', !r.lcObjetModele);
+      if (holoCarte >= 0 && univers !== 'tajine') afficherBanniere(holoCarte);
+    }
     function appliquerReglagesCartes() {
       dessinerCurseur();
       scene.style.setProperty('--cj-duree', r.dureeRetournement + 's');
@@ -711,6 +975,24 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
       if (r.reflet) delete scene.dataset.sansReflet; else scene.dataset.sansReflet = '1';
       scene.style.setProperty('--holo-force', String(r.holoTremblement));
       scene.style.setProperty('--holo-couleur', r.holoCouleur);
+      scene.style.setProperty('--holo-texte', r.holoTexte);
+      scene.toggleAttribute('data-reglages-pro', r.carteReglages);
+      scene.toggleAttribute('data-reseaux', r.carteReseaux);
+      scene.toggleAttribute('data-direct', r.carteDirect);
+      scene.style.setProperty('--couleur-direct', r.couleurDirect);
+      scene.style.setProperty('--photo-gain', String(r.photoGain));
+      scene.style.setProperty('--nom-fond', String(r.nomFond));
+      scene.style.setProperty('--fiche-zoom', String(r.ficheZoom));
+      scene.style.setProperty('--fiche-dx', r.ficheX + 'px');
+      scene.style.setProperty('--fiche-dy', r.ficheY + 'px');
+      scene.style.setProperty('--agent-zoom', String(r.agentZoom));
+      scene.style.setProperty('--agent-dx', r.agentX + 'px');
+      scene.style.setProperty('--agent-dy', r.agentY + 'px');
+      scene.style.setProperty('--nom-fond-taille', String(r.nomFondTaille));
+      scene.style.setProperty('--nom-fond-y', r.nomFondY + '%');
+      scene.style.setProperty('--holo-lignes', String(r.holoLignes));
+      scene.style.setProperty('--faisceau', String(r.holoFaisceau));
+      appliquerLayoutCarte();
       scene.style.setProperty('--apercu-rotation', r.apercuRotation + 'deg');
       scene.style.setProperty('--apercu-leve', r.apercuSoulevement + 'px');
       if (r.apercuIndice) delete scene.dataset.sansIndice; else scene.dataset.sansIndice = '';
@@ -817,9 +1099,71 @@ html[data-qualite="minimal"] .mc-imprime::before, html[data-qualite="minimal"] .
         else minuterieRetournement = setTimeout(() => { if (actif === i) retourner(i, true); }, 480);
       }
     }
+    const url = u => 'url("' + u + '")';
+    const tiroirReseaux = j => '<div class="mcb-tiroir"><div class="mcb-tiroir-interieur">' + (j.reseaux || []).map(nom => {
+      const lien = j.liens && j.liens[nom], direct = nom === 'twitch' && j.direct && r.carteDirect ? ' en-direct' : '';
+      return lien
+        ? '<a class="mcb-bouton' + direct + '" href="' + lien + '" target="_blank" rel="noopener" aria-label="' + nom + ' de ' + j.pseudo + '"><span class="mcb-bouton-fond"></span>' + icone(nom) + '</a>'
+        : '<span class="mcb-bouton' + direct + '" title="' + nom + ' : bientôt"><span class="mcb-bouton-fond"></span>' + icone(nom) + '</span>';
+    }).join('') + '</div></div>';
+    const apercuDirect = j =>
+      '<a class="mcb-photo mcb-direct" href="' + j.liens.twitch + '" target="_blank" rel="noopener" aria-label="Regarder le live de ' + j.pseudo + ' sur Twitch">' +
+        '<img src="' + j.imageDirect + '" alt="" decoding="async">' +
+        '<span class="mcb-direct-badge"><i></i>LIVE</span><span class="mcb-direct-lecture" aria-hidden="true"></span>' +
+        '<span class="mcb-direct-infos"><b>' + j.titreDirect + '</b>' + j.spectateurs + ' spectateurs · ' + j.liens.twitch.replace('https://www.', '') + '</span>' +
+        '<span class="mcb-direct-ouvrir">Regarder sur Twitch ↗</span></a>';
+    function banniere(j) {
+      const enDirect = !!(j.direct && r.carteDirect && j.liens && j.liens.twitch);
+      const c = r.lcCoins;
+      const cadre = '0,0 ' + (100 - c) + ',0 100,' + c + ' 100,150 ' + c + ',150 0,' + (150 - c);
+      const objet = ([type, modele]) => '<div class="mcb-objet"><div class="mcb-case"><i>' + type + '</i><svg viewBox="0 0 24 24" aria-hidden="true">' + (icones[type] || '') + '</svg></div><span>' + modele + '</span></div>';
+      return '<div class="mcb-carte"><div class="mcb-contenu"><div class="mcb-haut">' +
+          (enDirect ? apercuDirect(j) : '<div class="mcb-photo"><img src="' + j.photo + '" alt="" decoding="async"><span class="mcb-teinte"></span></div>') +
+          (enDirect ? '<p class="mcb-pseudo mcb-pseudo--direct" style="--lettres:7">En live</p>' : '<p class="mcb-pseudo" style="--lettres:' + j.pseudo.length + '">' + j.pseudo + '</p>') +
+          '<span class="mcb-etiquette">// ' + j.numero + '</span></div>' +
+        '<div class="mcb-bas"><div class="mcb-role"><span class="mcb-icone" style=\'--icone:' + url('ressources-maquette/V-valorant/roles/' + j.icone + '.png') + '\'></span>' +
+          '<div><small>Agent favori · ' + j.agent + '</small>' + j.role + '</div></div>' +
+          '<p class="mcb-identite">' + j.identite + '</p>' +
+          '<div class="mcb-bio">' + j.bio.map(ligne => '<p>' + ligne + '</p>').join('') + '</div>' +
+          (j.setup.length ? '<div class="mcb-objets">' + j.setup.map(objet).join('') + '</div>' : '<p class="mcb-vide">Équipement à venir</p>') +
+        '</div></div>' +
+        '<svg class="mcb-cadre" viewBox="0 0 100 150" preserveAspectRatio="none" aria-hidden="true"><polygon points="' + cadre + '"/></svg></div>' + tiroirReseaux(j);
+    }
+    function afficherBanniere(i) {
+      holoImage.innerHTML = banniere(joueurs[i]);
+      const photo = holoImage.querySelector('.mcb-photo img');
+      photo.addEventListener('error', () => photo.parentElement.classList.add('mcb-sans-photo'));
+      ajusterPseudo();
+      document.fonts.ready.then(ajusterPseudo);
+    }
+    const REMPLISSAGE_PSEUDO = 0.96;
+    const EPAISSEUR_PSEUDO = 0.985;
+    function ajusterPseudo() {
+      const pseudo = holoImage.querySelector('.mcb-pseudo'), haut = holoImage.querySelector('.mcb-haut');
+      if (!pseudo || !haut) return;
+      const horizontal = r.lcPseudoSens === 'horizontal';
+      const cqw = holoImage.clientWidth / 100;
+      const libre = horizontal ? haut.clientWidth - r.lcPseudoX * cqw : haut.clientHeight - r.lcPseudoY * cqw;
+      const longueur = horizontal ? pseudo.offsetWidth : pseudo.offsetHeight;
+      if (libre <= 0 || !longueur) return;
+      const cible = Math.min(libre * REMPLISSAGE_PSEUDO * r.lcPseudoTaille, libre);
+      const taille = parseFloat(getComputedStyle(pseudo).fontSize) * cible / longueur;
+      pseudo.style.fontSize = taille.toFixed(2) + 'px';
+      pseudo.style.removeProperty('--etirement');
+      pseudo.style.removeProperty('left');
+      const colonne = (r.lcPhotoGauche - r.lcPseudoX) * cqw;
+      if (horizontal || colonne <= 0) return;
+      const etirement = (colonne * EPAISSEUR_PSEUDO) / taille;
+      pseudo.style.setProperty('--etirement', etirement.toFixed(3));
+      pseudo.style.left = (r.lcPseudoX * cqw - pseudo.offsetWidth * (1 - etirement) / 2).toFixed(2) + 'px';
+    }
     function montrerHologramme(i) {
       if (!holoDisponible || !r.hologramme) return;
-      holoImage.replaceChildren(cartes[i].querySelector('.mcj-avant').cloneNode(true));
+      if (univers === 'tajine') holoImage.replaceChildren(cartes[i].querySelector('.mcj-avant').cloneNode(true));
+      else {
+        afficherBanniere(i);
+        holoAgent.style.setProperty('--fond', url('ressources-maquette/V-valorant/agents/' + joueurs[i].dossier + '/fond.png'));
+      }
       holoCarte = i;
       holo.classList.add('visible');
       scene.dataset.holo = '';
